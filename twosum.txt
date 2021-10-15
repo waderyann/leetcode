@@ -1,0 +1,44 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        
+       /* int i = 0;
+        int u = nums.length - 1;
+        Solution obj = new Solution();
+        
+        while ((obj.nums[i]) != null)
+        {
+            while(u > i)
+            {
+             if (nums[i] + nums[i + u] == target)
+                {
+                    int a[] = {i,u};
+                    return a;
+                }
+            u--;
+            }
+            i++;
+            u = nums.length - 1;
+            
+            
+        }
+        
+        return null;
+    }
+    */
+        
+        for (int i = 0; i < nums.length - 1; i++)
+        {
+            for (int u = 0; u < nums.length; u++)
+            {
+                if (nums[i] + nums[u] == target)
+                {
+                    int a[] = {i,u};
+                    return a;
+                }
+            }
+        }
+        throw new IllegalArgumentException("Cant do this");
+    }
+    
+}
