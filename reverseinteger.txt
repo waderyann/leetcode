@@ -1,0 +1,46 @@
+class Solution {
+    public int reverse(int x) {
+        boolean neg = false;
+        int y = x;
+        if (y < 0)
+        {
+            neg = true;
+            y = Math.abs(x);
+        }
+        
+        String m = Integer.toString(y);
+        String p = "";
+        
+        if ((x >= Integer.MAX_VALUE)||( x <= Integer.MIN_VALUE))
+        {
+            return 0;
+        }
+        
+        for (int i = m.length(); i > 0; i--)
+        {
+            char w = m.charAt(i - 1);
+            
+            if (neg == true)
+            {
+                p = "-";
+                neg = false;
+            }
+            p = p + String.valueOf(w);
+        }
+        int reverse = Integer.parseInt(p);
+        
+        return reverse;
+    }
+}
+
+/* Notes
+//String m = x.toString();
+for (int i = 0; i < m.length; i++)
+        {
+            //char w = m.charAt(i);
+            for (int u = m.length; u > 0; u--)
+            {
+                
+            }
+            
+        }*/
