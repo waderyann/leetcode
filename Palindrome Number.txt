@@ -1,0 +1,83 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        
+        if (x < 0)
+        {
+            return false;
+        }
+        
+        
+        int firstDigit = 0;
+        int lastDigit = 0;
+        boolean notfirstDigit;
+        
+        String newNumber = "1";
+        int xRPL = x;
+        //int length = (Integer.toString(x)).length();
+        int y = 0;
+        
+        lastDigit = x % 10;
+        int length = (Integer.toString(x)).length();
+        //System.out.println(" :" + length);
+         for(int i = 1; i < length; i++)
+        {
+                newNumber += "0";
+        }
+        
+        
+        while( x !=0)
+        {
+            firstDigit = x % 10;
+            x /= 10;
+           // System.out.println(" :" + x);
+        }
+        
+        if (xRPL < 9)
+        {
+            return true;
+        }
+        
+        if (firstDigit == lastDigit)
+        {
+            xRPL = (xRPL - ((Integer.parseInt(newNumber)) * firstDigit)) / 10;
+            if (xRPL > 9)
+            {
+                
+                //newNumber = "1";
+                System.out.println(xRPL);
+                isPalindrome(xRPL);
+            }
+            
+        
+            
+        
+            //System.out.println(" ...." + xRPL);
+            
+        }
+        
+        
+        
+        
+        
+        
+        /*if (xRPL > 0)
+        {
+            isPalindrome(xRPL);
+            if (firstDigit == lastDigit)
+            {
+                return true;
+            }
+        }*/
+        //isPalindrome(xRPL);
+            
+         //newNumber += Integer.toString(x);
+        
+        
+        /*if (firstDigit == lastDigit)
+        {
+            return true;
+        }*/
+        
+        return false;
+    }
+}
