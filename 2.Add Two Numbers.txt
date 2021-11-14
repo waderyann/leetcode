@@ -10,34 +10,43 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        //System.out.println((l1.next).val);
+        //Taking the linked list out and adding the numbers
         String a = "";
         String b = "";
-        while((l1!=null)||(l2 != null))
-        {   
+        while(l1!=null){   
             a = Integer.toString(l1.val) + a;
-            b = Integer.toString(l2.val) + b;
             l1= l1.next;
+        }
+        while(l2!=null){
+            b = Integer.toString(l2.val) + b;
             l2 = l2.next;
         }
-        int c = Integer.parseInt(a) + Integer.parseInt(b);
         String w = Integer.toString(Integer.parseInt(a) + Integer.parseInt(b));
-        System.out.println(c);
+       
+        
+        //Putting it back into a linked list
         ListNode l3 = new ListNode();
         int y = 0;
-        for (int i = 0; i < w.length() - 1; i++){
+        System.out.println(w.length());
+        for (int i = w.length() - 1; i > -1; i--){
+            System.out.println(l3.val);
             y = Integer.parseInt(Character.toString(w.charAt(i)));
-            if (l1 == null){
+            if (l3 == null){
                 l3 = new ListNode(y, null);
             }
             while (l3.next != null){
                 l3 = l3.next;
             }
-            l3.next = new ListNode(y, null);
-            System.out.println(l3.val);
+            if (l3.next == null)
+            {
+                l3.next = new ListNode(y, null);
+            }
+            //l3.next = new ListNode(y, null);
+            
         }
         
         return l3;
     }
+    
     
 }
